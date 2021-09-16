@@ -1,0 +1,7 @@
+{
+  "ideascale_api_token": "",
+  "ideascale_base_api_url": "https://cardano.ideascale.com/a/rest",
+  "group_ids": [],
+  "members_endpoint": "/v1/groups/{}/members/0/100",
+  "single_member_endpoint": "/v1/members/{}/ideas"
+}
