@@ -1,7 +1,6 @@
 import random
 import json
 import requests
-from github import Github
 
 
 def loadOptions(goptions = {}):
