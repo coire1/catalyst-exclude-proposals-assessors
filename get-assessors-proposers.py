@@ -30,13 +30,17 @@ def getUsers(goptions):
             for user in response:
                 tempUser = {
                     "id": user["id"],
-                    "userName": user["userName"],
                     "email": user["email"],
                     "proposals": [],
                     "campaigns": []
                 }
+                if "userName" in user:
+                    tempUser["userName"] = user["userName"]
                 users.append(tempUser)
-    for user in users:
+    # Get only first 10 users
+    for user in users[:10]:
+    # Get all users
+    #for user in users:
         url = goptions["ideascale_base_api_url"] + \
             goptions["single_member_endpoint"].format(user["id"])
         print("Requesting url: {}".format(url))
@@ -58,5 +62,5 @@ def main():
     users = getUsers(goptions)
     with open('users.json', 'w') as outfile:
         json.dump(users, outfile)
-        
+
 main()
